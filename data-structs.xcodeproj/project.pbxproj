@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34CACEA1267020C50080BF48 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34CACE3A26701D5F0080BF48 /* main.cpp */; };
+		34CACEAF26796D980080BF48 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34CACE3A26701D5F0080BF48 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,23 +28,23 @@
 		34CACE4826701DE00080BF48 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		34CACE4E26701E0B0080BF48 /* header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
 		34CACE4F26701E330080BF48 /* functions.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = functions.c; sourceTree = "<group>"; };
-		34CACE6726701F590080BF48 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = main.c; path = "../../../../../../../Documents/Projetos/data-structs/queue/main.c"; sourceTree = "<group>"; };
 		34CACE6826701F590080BF48 /* functions.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = functions.c; sourceTree = "<group>"; };
 		34CACE6926701F590080BF48 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		34CACE6A26701F590080BF48 /* header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
-		34CACE7726701FCA0080BF48 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = main.c; path = "../../../../../../../Documents/Projetos/data-structs/stack/main.c"; sourceTree = "<group>"; };
 		34CACE7826701FCA0080BF48 /* functions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = functions.c; sourceTree = "<group>"; };
 		34CACE7926701FCA0080BF48 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		34CACE7A26701FCA0080BF48 /* header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
 		34CACE89267020250080BF48 /* header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
 		34CACE8A267020250080BF48 /* route.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = route.h; sourceTree = "<group>"; };
-		34CACE8B267020250080BF48 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = "../../../../../../../Documents/Projetos/data-structs/lists/routes/main.cpp"; sourceTree = "<group>"; };
 		34CACE8C267020250080BF48 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		34CACE8D267020250080BF48 /* functions.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = functions.c; sourceTree = "<group>"; };
 		34CACE8E267020250080BF48 /* list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
-		34CACE9B267020860080BF48 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = "../../../../../../../../Documents/Projetos/data-structs/lists/double list/main.cpp"; sourceTree = "<group>"; };
 		34CACE9C267020860080BF48 /* header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
 		34CACE9D267020860080BF48 /* functions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = functions.cpp; sourceTree = "<group>"; };
+		34CACEA6267968690080BF48 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		34CACEA926796BBC0080BF48 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		34CACEAB26796BDC0080BF48 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		34CACEAD26796BEB0080BF48 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +118,7 @@
 			children = (
 				34CACE6826701F590080BF48 /* functions.c */,
 				34CACE6A26701F590080BF48 /* header.h */,
-				34CACE6726701F590080BF48 /* main.c */,
+				34CACEAB26796BDC0080BF48 /* main.c */,
 				34CACE6926701F590080BF48 /* README.md */,
 			);
 			path = queue;
@@ -129,7 +129,7 @@
 			children = (
 				34CACE7826701FCA0080BF48 /* functions.c */,
 				34CACE7A26701FCA0080BF48 /* header.h */,
-				34CACE7726701FCA0080BF48 /* main.c */,
+				34CACEAD26796BEB0080BF48 /* main.c */,
 				34CACE7926701FCA0080BF48 /* README.md */,
 			);
 			path = stack;
@@ -141,9 +141,9 @@
 				34CACE8D267020250080BF48 /* functions.c */,
 				34CACE89267020250080BF48 /* header.h */,
 				34CACE8E267020250080BF48 /* list.h */,
-				34CACE8B267020250080BF48 /* main.cpp */,
 				34CACE8C267020250080BF48 /* README.md */,
 				34CACE8A267020250080BF48 /* route.h */,
+				34CACEA6267968690080BF48 /* main.cpp */,
 			);
 			path = routes;
 			sourceTree = "<group>";
@@ -153,7 +153,7 @@
 			children = (
 				34CACE9D267020860080BF48 /* functions.cpp */,
 				34CACE9C267020860080BF48 /* header.h */,
-				34CACE9B267020860080BF48 /* main.cpp */,
+				34CACEA926796BBC0080BF48 /* main.cpp */,
 			);
 			path = "double list";
 			sourceTree = "<group>";
@@ -214,7 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34CACEA1267020C50080BF48 /* main.cpp in Sources */,
+				34CACEAF26796D980080BF48 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

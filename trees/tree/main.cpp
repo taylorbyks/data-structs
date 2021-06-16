@@ -22,17 +22,16 @@ class Tree {
 
   public:
     Tree() {
-      // left = nullptr;
-      // right = nullptr;
-      // tail = nullptr;
-      // size = 0;
+      root = nullptr;
+      size = 0;
     }
 
     ~Tree() {
 
     }
 
-    Node* insert(int data) {
+    bool insert(int data) {
+      printf("Teste");
       Node *temp = (Node*) malloc(sizeof(Node));
 
       temp->content = data;
@@ -53,23 +52,27 @@ class Tree {
 
             if(current == nullptr) {
               parent->left = temp;
-              return root;
+              return true;
             }
           } else {
             current = current->right;
 
             if(current == nullptr) {
               parent->right = temp;
-              return root;
+              return true;
             }
           }
         }
       }
-      return root;
+      return true;
     }
 };
 
 int main() {
-
+  Tree BinaryTree;
+  
+  BinaryTree.insert(12);
+  BinaryTree.insert(12);
+  
   return 0;
 }
