@@ -66,13 +66,22 @@ class Tree {
       }
       return true;
     }
+
+    void inorderTraversal() {
+      if(root){
+        inorderTraversal(root->left);
+        printf("%i", root->content);
+        inorderTraversal(root->right);
+      }
+    }
 };
 
 int main() {
   Tree BinaryTree;
-  
+
   BinaryTree.insert(12);
-  BinaryTree.insert(12);
-  
+
+  BinaryTree.inorderTraversal();
+
   return 0;
 }
