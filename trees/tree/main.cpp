@@ -31,7 +31,6 @@ class Tree {
     }
 
     bool insert(int data) {
-      printf("Teste");
       Node *temp = (Node*) malloc(sizeof(Node));
 
       temp->content = data;
@@ -67,21 +66,49 @@ class Tree {
       return true;
     }
 
-    void inorderTraversal() {
+    void inorderTraversal(Node *root) {
       if(root){
         inorderTraversal(root->left);
         printf("%i", root->content);
         inorderTraversal(root->right);
       }
     }
+  
+  Node *Root(){
+    return root;
+  }
+  
+  void search(int value) {
+    Node *current = root;
+    printf("Visiting elemnets: ");
+    
+    while(current){
+      printf("%d, ", current->content);
+      
+      if(value < current->content) {
+        current = current->left;
+      } else if(value > current->content) {
+        current = current->right;
+      } else {
+        printf("Found: %d", current->content);
+        return;
+      }
+    }
+  }
 };
 
 int main() {
   Tree BinaryTree;
 
   BinaryTree.insert(12);
+  BinaryTree.insert(10);
+  BinaryTree.insert(5);
+  BinaryTree.insert(18);
+  BinaryTree.insert(22);
 
-  BinaryTree.inorderTraversal();
+  BinaryTree.inorderTraversal(BinaryTree.Root());
+  
+  BinaryTree.search(22);
 
   return 0;
 }
