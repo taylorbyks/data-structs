@@ -69,46 +69,68 @@ class Tree {
     void inorderTraversal(Node *root) {
       if(root){
         inorderTraversal(root->left);
-        printf("%i", root->content);
+        printf("%i ,", root->content);
         inorderTraversal(root->right);
       }
     }
   
-  Node *Root(){
-    return root;
-  }
-  
-  void search(int value) {
-    Node *current = root;
-    printf("Visiting elemnets: ");
-    
-    while(current){
-      printf("%d, ", current->content);
-      
-      if(value < current->content) {
-        current = current->left;
-      } else if(value > current->content) {
-        current = current->right;
-      } else {
-        printf("Found: %d", current->content);
-        return;
+    void preorderTraversal(Node *root) {
+      if(root){
+        printf("%i ,", root->content);
+        preorderTraversal(root->left);
+        preorderTraversal(root->right);
       }
     }
-  }
+  
+    void postorderTraversal(Node *root) {
+      if(root){
+        postorderTraversal(root->left);
+        postorderTraversal(root->right);
+        printf("%i ,", root->content);
+      }
+    }
+  
+    Node *Root(){
+      return root;
+    }
+  
+    void search(int value) {
+      Node *current = root;
+      printf("Visiting elements: ");
+      
+      while(current){
+        printf("%d, ", current->content);
+        
+        if(value < current->content) {
+          current = current->left;
+        } else if(value > current->content) {
+          current = current->right;
+        } else {
+          printf("Found: %d", current->content);
+          return;
+        }
+      }
+    }
 };
 
 int main() {
   Tree BinaryTree;
 
-  BinaryTree.insert(12);
-  BinaryTree.insert(10);
+  BinaryTree.insert(1);
+  BinaryTree.insert(2);
+  BinaryTree.insert(3);
   BinaryTree.insert(5);
-  BinaryTree.insert(18);
-  BinaryTree.insert(22);
-
-  BinaryTree.inorderTraversal(BinaryTree.Root());
+  BinaryTree.insert(4);
   
-  BinaryTree.search(22);
+  printf("Inorder \n");
+  BinaryTree.inorderTraversal(BinaryTree.Root());
+  printf("\nPreorder \n");
+  BinaryTree.preorderTraversal(BinaryTree.Root());
+  printf("\nPostorder \n");
+  BinaryTree.postorderTraversal(BinaryTree.Root());
+  printf("\n");
+  
+  BinaryTree.search(2);
 
   return 0;
 }
