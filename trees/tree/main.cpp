@@ -65,6 +65,27 @@ class Tree {
       }
       return true;
     }
+  
+    bool remove(Node *root, int key) {
+      printf("Visiting element: ");
+      
+      printf("%d, ", root->content);
+      
+      if(key == root->left->content) {
+        printf("f %d, ", root->left->content);
+        return true;
+      } else if(key == root->right->content) {
+        printf("f %d, ", root->right->content);
+        return true;
+      } else if(key < root->content) {
+        remove(root->left, key);
+      } else if(key > root->content) {
+        remove(root->right, key);
+      }
+      
+      printf("Not found\n");
+      return false;
+    }
 
     void inorderTraversal(Node *root) {
       if(root){
@@ -94,22 +115,42 @@ class Tree {
       return root;
     }
   
-    void search(int value) {
+    bool search(int value) {
       Node *current = root;
       printf("Visiting elements: ");
       
       while(current){
         printf("%d, ", current->content);
         
-        if(value < current->content) {
+        if (value == current->content){
+          printf("Found: %d", current->content);
+          return true;
+        } else if(value < current->content) {
           current = current->left;
         } else if(value > current->content) {
           current = current->right;
-        } else {
-          printf("Found: %d", current->content);
-          return;
         }
       }
+      
+      printf("Not found\n");
+      return false;
+    }
+  
+    bool searchRecursion(Node *root, int key) {
+      if(!root) {
+        return false;
+      }
+      
+      if (key == root->content){
+        printf("Found: %d", root->content);
+        return true;
+      } else if(key < root->content) {
+        searchR(root->left, key);
+      } else if(key > root->content) {
+        searchR(root->right, key);
+      }
+      
+      return false;
     }
 };
 
@@ -130,7 +171,9 @@ int main() {
   BinaryTree.postorderTraversal(BinaryTree.Root());
   printf("\n");
   
-  BinaryTree.search(2);
+  BinaryTree.searchR(BinaryTree.Root(), 4);
+  
+  //BinaryTree.remove(2);
 
   return 0;
 }
