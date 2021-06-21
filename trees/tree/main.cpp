@@ -65,12 +65,12 @@ class Tree {
       }
       return true;
     }
-  
+
     bool remove(Node *root, int key) {
       printf("Visiting element: ");
-      
+
       printf("%d, ", root->content);
-      
+
       if(key == root->left->content) {
         printf("f %d, ", root->left->content);
         return true;
@@ -82,7 +82,7 @@ class Tree {
       } else if(key > root->content) {
         remove(root->right, key);
       }
-      
+
       printf("Not found\n");
       return false;
     }
@@ -94,7 +94,7 @@ class Tree {
         inorderTraversal(root->right);
       }
     }
-  
+
     void preorderTraversal(Node *root) {
       if(root){
         printf("%i ,", root->content);
@@ -102,7 +102,7 @@ class Tree {
         preorderTraversal(root->right);
       }
     }
-  
+
     void postorderTraversal(Node *root) {
       if(root){
         postorderTraversal(root->left);
@@ -110,18 +110,18 @@ class Tree {
         printf("%i ,", root->content);
       }
     }
-  
+
     Node *Root(){
       return root;
     }
-  
+
     bool search(int value) {
       Node *current = root;
       printf("Visiting elements: ");
-      
+
       while(current){
         printf("%d, ", current->content);
-        
+
         if (value == current->content){
           printf("Found: %d", current->content);
           return true;
@@ -131,25 +131,25 @@ class Tree {
           current = current->right;
         }
       }
-      
+
       printf("Not found\n");
       return false;
     }
-  
+
     bool searchRecursion(Node *root, int key) {
       if(!root) {
         return false;
       }
-      
+
       if (key == root->content){
         printf("Found: %d", root->content);
         return true;
       } else if(key < root->content) {
-        searchR(root->left, key);
+        searchRecursion(root->left, key);
       } else if(key > root->content) {
-        searchR(root->right, key);
+        searchRecursion(root->right, key);
       }
-      
+
       return false;
     }
 };
@@ -162,7 +162,7 @@ int main() {
   BinaryTree.insert(3);
   BinaryTree.insert(5);
   BinaryTree.insert(4);
-  
+
   printf("Inorder \n");
   BinaryTree.inorderTraversal(BinaryTree.Root());
   printf("\nPreorder \n");
@@ -170,9 +170,9 @@ int main() {
   printf("\nPostorder \n");
   BinaryTree.postorderTraversal(BinaryTree.Root());
   printf("\n");
-  
-  BinaryTree.searchR(BinaryTree.Root(), 4);
-  
+
+  BinaryTree.searchRecursion(BinaryTree.Root(), 4);
+
   //BinaryTree.remove(2);
 
   return 0;
