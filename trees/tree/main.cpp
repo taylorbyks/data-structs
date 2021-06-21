@@ -173,7 +173,7 @@ int main() {
 
   BinaryTree.searchRecursion(BinaryTree.Root(), 4);
 
-  //BinaryTree.remove(2);
+  BinaryTree.remove(2);
 
   return 0;
 }
