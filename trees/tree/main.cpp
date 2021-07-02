@@ -20,6 +20,30 @@ class Tree {
     Node *root;
     int size;
 
+  void preorder(Node *root) {
+    if(root){
+      printf("%i ,", root->content);
+      preorder(root->left);
+      preorder(root->right);
+    }
+  }
+
+  void inorder(Node *root) {
+    if(root){
+      inorder(root->left);
+      printf("%i ,", root->content);
+      inorder(root->right);
+    }
+  }
+
+  void postorder(Node *root) {
+    if(root){
+      postorder(root->left);
+      postorder(root->right);
+      printf("%i ,", root->content);
+    }
+  }
+
   public:
     Tree() {
       root = nullptr;
@@ -67,90 +91,45 @@ class Tree {
     }
 
     bool remove(Node *root, int key) {
-      printf("Visiting element: ");
 
-      printf("%d, ", root->content);
 
-      if(key == root->left->content) {
-        printf("f %d, ", root->left->content);
-        return true;
-      } else if(key == root->right->content) {
-        printf("f %d, ", root->right->content);
-        return true;
-      } else if(key < root->content) {
-        remove(root->left, key);
-      } else if(key > root->content) {
-        remove(root->right, key);
-      }
-
-      printf("Not found\n");
-      return false;
     }
 
-    void inorderTraversal(Node *root) {
-      if(root){
-        inorderTraversal(root->left);
-        printf("%i ,", root->content);
-        inorderTraversal(root->right);
-      }
+    void inorderTraversal() {
+      inorder(root);
     }
 
-    void preorderTraversal(Node *root) {
-      if(root){
-        printf("%i ,", root->content);
-        preorderTraversal(root->left);
-        preorderTraversal(root->right);
-      }
+    void preorderTraversal() {
+      preorder(root);
     }
 
-    void postorderTraversal(Node *root) {
-      if(root){
-        postorderTraversal(root->left);
-        postorderTraversal(root->right);
-        printf("%i ,", root->content);
-      }
+    void postorderTraversal(){
+      postorder(root);
     }
 
     Node *Root(){
       return root;
     }
 
-    bool search(int value) {
-      Node *current = root;
-      printf("Visiting elements: ");
+    void search(int value) {
+      bool founded = searchRecursion(root, value);
 
-      while(current){
-        printf("%d, ", current->content);
-
-        if (value == current->content){
-          printf("Found: %d", current->content);
-          return true;
-        } else if(value < current->content) {
-          current = current->left;
-        } else if(value > current->content) {
-          current = current->right;
-        }
-      }
-
-      printf("Not found\n");
-      return false;
+      printf("Founded: %i \n", founded);
     }
 
-    bool searchRecursion(Node *root, int key) {
-      if(!root) {
+    bool searchRecursion(Node *current, int key) {
+      if(!current) {
         return false;
       }
 
-      if (key == root->content){
-        printf("Found: %d", root->content);
+      if (key == current->content){
         return true;
-      } else if(key < root->content) {
-        searchRecursion(root->left, key);
-      } else if(key > root->content) {
-        searchRecursion(root->right, key);
+      } else if(key < current->content) {
+        searchRecursion(current->left, key);
+      } else {
+        searchRecursion(current->right, key);
       }
 
-      return false;
     }
 };
 
@@ -164,16 +143,18 @@ int main() {
   BinaryTree.insert(4);
 
   printf("Inorder \n");
-  BinaryTree.inorderTraversal(BinaryTree.Root());
+  BinaryTree.inorderTraversal();
+
   printf("\nPreorder \n");
-  BinaryTree.preorderTraversal(BinaryTree.Root());
+  BinaryTree.preorderTraversal();
+
   printf("\nPostorder \n");
-  BinaryTree.postorderTraversal(BinaryTree.Root());
+  BinaryTree.postorderTraversal();
   printf("\n");
 
-  BinaryTree.searchRecursion(BinaryTree.Root(), 4);
+  BinaryTree.search(6);
 
-  BinaryTree.remove(2);
+  //BinaryTree.remove(2);
 
   return 0;
 }
