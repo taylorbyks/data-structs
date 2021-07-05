@@ -43,6 +43,19 @@ class Tree {
       printf("%i ,", root->content);
     }
   }
+  
+  bool searchRecursion(Node *current, int key) {
+    if(current) {
+      if (key == current->content){
+        return true;
+      } else if(key < current->content) {
+        searchRecursion(current->left, key);
+      } else {
+        searchRecursion(current->right, key);
+      }
+    }
+    return false;
+  }
 
   public:
     Tree() {
@@ -68,7 +81,7 @@ class Tree {
         Node *parent = nullptr;
 
         while(true){
-          parent= current;
+          parent = current;
 
           if(data < parent->content) {
             current = current->left;
@@ -90,9 +103,8 @@ class Tree {
       return true;
     }
 
-    bool remove(Node *root, int key) {
-
-
+    void remove(Node *root, int key) {
+      
     }
 
     void inorderTraversal() {
@@ -116,21 +128,6 @@ class Tree {
 
       printf("Founded: %i \n", founded);
     }
-
-    bool searchRecursion(Node *current, int key) {
-      if(!current) {
-        return false;
-      }
-
-      if (key == current->content){
-        return true;
-      } else if(key < current->content) {
-        searchRecursion(current->left, key);
-      } else {
-        searchRecursion(current->right, key);
-      }
-
-    }
 };
 
 int main() {
@@ -152,7 +149,7 @@ int main() {
   BinaryTree.postorderTraversal();
   printf("\n");
 
-  BinaryTree.search(6);
+  BinaryTree.search(1);
 
   //BinaryTree.remove(2);
 
