@@ -24,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		347809F926D800220088085D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		347809FF26D822F50088085D /* header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
+		34780A0026D823180088085D /* functions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = functions.cpp; sourceTree = "<group>"; };
 		34CACE2A26701D3D0080BF48 /* data-structs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "data-structs"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34CACE3A26701D5F0080BF48 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		34CACE4826701DE00080BF48 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
@@ -63,6 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				347809F926D800220088085D /* main.cpp */,
+				347809FF26D822F50088085D /* header.h */,
+				34780A0026D823180088085D /* functions.cpp */,
 			);
 			path = "comparison sorting";
 			sourceTree = "<group>";
