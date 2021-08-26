@@ -2,7 +2,7 @@
 
 Repositório com todas as implementações de estruturas vista na disciplina e um pouco mais.
 
-Compilado no MacOS (Unix).
-Executado no Xcode e no terminal ZSH.
+Compilado no clang MacOS (Unix).
+Executado no Xcode.
 
 Feito por Taylor Byk Schinvelski.
