@@ -19,43 +19,85 @@ class Tree {
 
     Node *root;
     int size;
-
-  void preorder(Node *root) {
-    if(root){
-      printf("%i ,", root->content);
-      preorder(root->left);
-      preorder(root->right);
-    }
-  }
-
-  void inorder(Node *root) {
-    if(root){
-      inorder(root->left);
-      printf("%i ,", root->content);
-      inorder(root->right);
-    }
-  }
-
-  void postorder(Node *root) {
-    if(root){
-      postorder(root->left);
-      postorder(root->right);
-      printf("%i ,", root->content);
-    }
-  }
   
-  bool searchRecursion(Node *current, int key) {
-    if(current) {
-      if (key == current->content){
-        return true;
-      } else if(key < current->content) {
-        searchRecursion(current->left, key);
-      } else {
-        searchRecursion(current->right, key);
+    Node *newNode(int value) {
+      Node* newNode = (Node*)malloc(sizeof(Node));
+      newNode->content = value;
+      newNode->left = newNode->right = nullptr;
+      return newNode;
+    }
+
+    void preorder(Node *root) {
+      if(root){
+        printf("%i ,", root->content);
+        preorder(root->left);
+        preorder(root->right);
       }
     }
-    return false;
-  }
+
+    void inorder(Node *root) {
+      if(root){
+        inorder(root->left);
+        printf("%i ,", root->content);
+        inorder(root->right);
+      }
+    }
+
+    void postorder(Node *root) {
+      if(root){
+        postorder(root->left);
+        postorder(root->right);
+        printf("%i ,", root->content);
+      }
+    }
+    
+    Node *findMinimumValueNode(Node *current){
+      while (current && current->left != nullptr)
+        current = current->left;
+   
+      return current;
+    }
+    
+    Node *removeNode(Node *root, int key) {
+      if(root != nullptr){
+        if (key == root->content){
+          if (root->left == nullptr) {
+              Node* temp = root->right;
+              free(root);
+              return temp;
+          }
+          else if (root->right == nullptr) {
+              Node* temp = root->left;
+              free(root);
+              return temp;
+          }
+          
+          Node* temp = findMinimumValueNode(root->right);
+          root->content = temp->content;
+          
+          root->right = removeNode(root->right, temp->content);
+        } else if(key < root->content) {
+          root->left = removeNode(root->left, key);
+        } else {
+          root->right = removeNode(root->right, key);
+        }
+      }
+      return root;
+    }
+    
+    bool searchRecursion(Node *current, int key) {
+      if(current) {
+        if (key == current->content){
+          printf("Encontrou");
+          return true;
+        } else if(key < current->content) {
+          searchRecursion(current->left, key);
+        } else {
+          searchRecursion(current->right, key);
+        }
+      }
+      return false;
+    }
 
   public:
     Tree() {
@@ -68,11 +110,7 @@ class Tree {
     }
 
     bool insert(int data) {
-      Node *temp = (Node*) malloc(sizeof(Node));
-
-      temp->content = data;
-      temp->left = nullptr;
-      temp->right = nullptr;
+      Node *temp = newNode(data);
 
       if(root == nullptr) {
         root = temp;
@@ -103,8 +141,8 @@ class Tree {
       return true;
     }
 
-    void remove(Node *root, int key) {
-      
+    void remove(int key) {
+      removeNode(root, key);
     }
 
     void inorderTraversal() {
@@ -138,6 +176,7 @@ int main() {
   BinaryTree.insert(3);
   BinaryTree.insert(5);
   BinaryTree.insert(4);
+  BinaryTree.remove(1);
 
   printf("Inorder \n");
   BinaryTree.inorderTraversal();
@@ -149,9 +188,9 @@ int main() {
   BinaryTree.postorderTraversal();
   printf("\n");
 
+  BinaryTree.search(2);
   BinaryTree.search(1);
-
-  //BinaryTree.remove(2);
+  
 
   return 0;
 }
