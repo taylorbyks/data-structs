@@ -44,8 +44,18 @@ void insertionSort(int array[], int size) {
 
 void selectionSort(int array[], int size) {
   clock_t start = clock();
-  
-  // code
+   
+  for (int i = 0; i < size; i++) {
+    int minimum = i;
+    
+    for (int j = i+1; j < size; j++){
+      if (array[j] < array[minimum]){
+        minimum = j;
+      }
+    }
+      
+    swap(array[minimum], array[i]);
+  }
   
   cout << "Finalizado - Duração: " << (clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl << endl;
 }
@@ -53,7 +63,13 @@ void selectionSort(int array[], int size) {
 void bubbleSort(int array[], int size) {
   clock_t start = clock();
   
-  // code
+  for (int i = 0; i < size; i++){
+    for (int j = 0; j < size-i; j++){
+      if (array[j] > array[j+1]){
+        swap(array[j], array[j+1]);
+      }
+    }
+  }
   
   cout << "Finalizado - Duração: " << (clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl << endl;
 }
