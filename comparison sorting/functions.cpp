@@ -99,7 +99,7 @@ void shellSort(int array[], int size) {
 }
 
 void menu() {
-  int option = 0;
+  int option;
   int array[] = {1, 6, 5, 3, 2, 8, 12, 2, 1, 8, 9, 11, 4, 15, 19, 20, 40, 45, 6, 7, 13, 16};
   int arraySize = sizeof(array)/sizeof(array[0]);
   
@@ -116,8 +116,7 @@ void menu() {
   
   cin >> option;
   
-  while (option != 0){
-  
+  if (option != 0){
     switch (option) {
       case 1:
         cout << "Usando Insertion Sort: " << endl;
